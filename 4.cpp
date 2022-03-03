@@ -1,4 +1,4 @@
-#include "../temp.hpp"
+#include "temp.hpp"
 
 bool checkPalindrome(int s)
 {

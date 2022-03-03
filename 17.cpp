@@ -1,4 +1,4 @@
-#include "../temp.hpp"
+#include "temp.hpp"
 
 void solve(vector<vector<int>> &arr, int i, int j)
 {

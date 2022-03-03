@@ -1,4 +1,4 @@
-#include "../temp.hpp"
+#include "temp.hpp"
 
 int main()
 {
