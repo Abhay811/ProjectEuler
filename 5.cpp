@@ -1,16 +1,9 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "../temp.hpp"
 
-#define ll long long
-
-ll gcd(ll a, ll b)
-{
-    return b ? gcd (b, a % b) : a;
-}
 int main()
 {
-    ll m = 2;
-    for (int i = 3; i < 20; i++)
-        m = (m * (i)) / gcd(m, i);
-    cout << m << endl;
+  int s = 1;
+  for (int i = 2; i <= 20; ++i)
+    s = fun::lcm(s, i);
+  cout << s << endl;
 }

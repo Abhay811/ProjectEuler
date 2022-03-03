@@ -1,28 +1,30 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "../temp.hpp"
 
-bool isPallindrome(int n)
+bool checkPalindrome(int s)
 {
-    int s = n, a = 0, r;
-    while (n)
-    {
-        r = n % 10;
-        a = a * 10 + r;
-        n /= 10;
-    }
-    if (s == a)
-        return true;
-    return false;
+  int n = s;
+  int r, m = 0;
+  while (n)
+  {
+    r = n % 10;
+    m = m * 10 + r;
+    n /= 10;
+  }
+  if (m == s)
+    return true;
+  else return false;
 }
 int main()
 {
-    int m, smax = 0;
-    for (int i = 100; i < 1000; i++)
-        for (int j = 100; j < 1000; j++)
-        {
-            m = i * j;
-            if (isPallindrome(m))
-                smax = max(smax, m);
-        }
-    cout << smax << endl;
+  int n = 100;
+  int m = 1000;
+  int mx = 0;
+  for (int i = 100; i < m; ++i)
+    for (int j = i + 1; j < m; ++j)
+    {
+      ll s = i * j;
+      if (checkPalindrome(s))
+        mx = max (mx, s);
+    }
+  cout << mx;
 }

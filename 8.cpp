@@ -1,26 +1,18 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define io freopen("8.txt", "r", stdin);
-#define ll long long
+#include "../temp.hpp"
+
 int main()
 {
-    io;
-    string str[20];
-    vector<int> a(1000);
-    int k = 0, r;
-    ll s = 0, m = 0;
-    for (int i = 0; i < 20; i++)
-        cin >> str[i];
-    for (int i = 0; i < 20; i++)
-        for (int j = 0; j < 50; j++)
-            a[k++] = str[i][j] - 48;
-    for (int i = 0; i < 1000; i++)
-    {
-        s = 1, r = i + 13;
-        for (int j = i; j < r; j++)
-            s *= a[j];
-        // cout << s << " ";
-        m = max(s, m);
-    }
-    cout << m << endl;
+  int l, span;
+  string num;
+  cin >> l >> span >> num;
+  ll s = 0;
+  cout << num.length() << endl;
+  for (int i = 0; i <= l - span; ++i)
+  {
+    ll temp = 1;
+    for (int j = 0; j < span; ++j)
+      temp *= (num[i + j] - '0');
+    s = fun::max (s, temp);
+  }
+  cout << s << endl;
 }
